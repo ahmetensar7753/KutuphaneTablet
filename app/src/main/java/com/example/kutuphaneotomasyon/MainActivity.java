@@ -24,28 +24,28 @@ public class MainActivity extends AppCompatActivity{
         buttonKitapAra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,KitapAraActivity.class));
+                startActivity(new Intent(MainActivity.this, ActivityBookSearch.class));
             }
         });
 
         buttonKategoriAra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,KategoriAraActivity.class));
+                startActivity(new Intent(MainActivity.this, ActivityCategorySearch.class));
             }
         });
 
         buttonYazarAra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,YazarAraActivity.class));
+                startActivity(new Intent(MainActivity.this, ActivityWriterSearch.class));
             }
         });
 
         buttonSistemeGiris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,GirisActivity.class));
+                startActivity(new Intent(MainActivity.this, ActivitySignIn.class));
             }
         });
 

@@ -54,6 +54,8 @@ public class BlackListAdapter extends RecyclerView.Adapter<BlackListAdapter.Card
         return new CardNesneTutucuKaraListe(view);
     }
 
+    // Cardlara gelen veriler yerleştiriliyor ve card üzerindeki buton sayesinde istenildiği durumda personel kullanıcıyı kara listeden çıkarabiliyor.
+    // Kara listeden çıkarılan kullanıcının tekrar kayıt olması gerekiyor. Veritabanında bir trigger ile bu kayıt sağlanabilir.
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKaraListe holder, int position) {
         BlackList karaListe = disaridanGelenKaraListe.get(position);
@@ -74,6 +76,7 @@ public class BlackListAdapter extends RecyclerView.Adapter<BlackListAdapter.Card
         return disaridanGelenKaraListe.size();
     }
 
+    //Parametre olarak verilen kullanıcının id'sine göre kara liste tablosundan ilgili kayıt siliniyor.
     public void deleteKaraListe(int id){
         String url = "https://kristalekmek.com/kutuphane/kara_liste/delete_kara_liste.php";
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

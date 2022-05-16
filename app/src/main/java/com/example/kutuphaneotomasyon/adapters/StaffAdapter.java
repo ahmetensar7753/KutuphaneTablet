@@ -46,6 +46,10 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.CardNesneTut
         return new CardNesneTutucuPersonel(view);
     }
 
+    // Burada bütün çekilen personeller cardview'lara yerleştiriliyor.
+    // cardview üzerine tıklandığında ise ilgili personelin bilgilerinin düzenlenebildiği bir activity'ye geçiş sağlanıyor.
+    // geçiş sırasında personelin bilgileri de diğer activity'ye taşınıyor. Taşınan bilgiler editText'lere yerleştiriliyor ve düzenlenebiliyor.
+
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuPersonel holder, int position) {
         Users personel = disaridanGelenPersonelle.get(position);

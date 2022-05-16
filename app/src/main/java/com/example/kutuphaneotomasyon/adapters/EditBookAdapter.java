@@ -51,6 +51,8 @@ public class EditBookAdapter extends RecyclerView.Adapter<EditBookAdapter.CardNe
         return new CardNesneTutucuKitapDuzenle(view);
     }
 
+    // Kitap bilgileri cardview içerisine yerleştiriliyor. İstenilen kitaba tıklandığı durumda kitabın bilgilerinin düzenlenebildiği bir activity'e geçiş sağlanıyor.
+
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKitapDuzenle holder, int position) {
         Books kitap = disaridanGelenKitaplar.get(position);
@@ -75,6 +77,8 @@ public class EditBookAdapter extends RecyclerView.Adapter<EditBookAdapter.CardNe
     public int getItemCount() {
         return disaridanGelenKitaplar.size();
     }
+
+    // Filter sınıfı ile kitaplar filitrelenebiliyor.Aratılan kitaba göre RecyclerView içerisinde listeleniyor.
 
     public Filter getFilter(){return Searched_Filter;}
 

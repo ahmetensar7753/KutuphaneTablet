@@ -52,6 +52,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.CardNesneTut
         return new CardNesneTutucuKitaplar(view);
     }
 
+    /*onBindViewHolder içerisinde ilgili kitapların isimlerine göre dinamik bir şekilde resimleri çekiliyor
+    * ve picasso kütüphanesi aracılığıyla ilgili kitabın olduğu card view'da image view'a set ediliyor.*/
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKitaplar holder, int position) {
         Books kitap = disaridanGelenKitaplar.get(position);
@@ -62,6 +64,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.CardNesneTut
         holder.textViewCardKitapAdi.setText(kitap.getKitap_ad());
         holder.textViewCardTasarimYazarAdi.setText(kitap.getYazar_ad());
 
+        // Karta tıklandığında ilgili kitabın detaylarının bulunduğu ActivityBookDetail'a geçiliyor.
+        // Geçişte kitap id geçilen yere gönderiliyor ona göre diğer tarafta id'ye göre kitapla ilgili tüm veriler vt'den çekiliyor.
         holder.cardViewKitap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +84,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.CardNesneTut
         return disaridanGelenKitaplar.size();
     }
 
+    // Filter sınıfı aracılığıyla kitapların filtrelenebilmesi sağlanıyor. Aratılan kitaba göre RecyclerView içerisinde listeleniyor.
     public Filter getFilter(){return Searched_Filter;}
 
     private Filter Searched_Filter = new Filter() {

@@ -47,6 +47,10 @@ public class WriterAdapter extends RecyclerView.Adapter<WriterAdapter.CardNesneT
         return new CardNesneTutucuYazar(view);
     }
 
+    // burada yazarlar cardview'lara yerleştiriliyor.
+    // cardview'a tıklandığında ilgili yazarın id'si ve adı ActivityWriterBooks'a geçiriliyor.
+    // geçilen activity'de yazarın yazdığı kitaplar çekilerek listeleniyor.
+
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuYazar holder, int position) {
         Writers yazar = disaridanGelenYazarlar.get(position);

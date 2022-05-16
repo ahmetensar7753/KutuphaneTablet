@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAC9">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:fontFamily="@font/francois_one"
+        android:text="TC No :"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="Ad :"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="@+id/textView32"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="Soyad :"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView45"
+        app:layout_constraintEnd_toEndOf="@+id/textView34"
+        app:layout_constraintStart_toStartOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="Telefon :"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView46"
+        app:layout_constraintEnd_toEndOf="@+id/textView37"
+        app:layout_constraintStart_toStartOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="E-Mail :"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView45"
+        app:layout_constraintStart_toStartOf="@+id/textView45"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+    <EditText
+        android:id="@+id/editTextKullaniciEkleTC"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:backgroundTint="@color/green"
+        android:ems="10"
+        android:hint="TC"
+        android:inputType="number"
+        android:maxLength="11"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView32"
+        app:layout_constraintStart_toEndOf="@+id/textView32"
+        app:layout_constraintTop_toTopOf="@+id/textView32" />
+
+    <EditText
+        android:id="@+id/editTextKullaniciEkleAd"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:ems="10"
+        android:hint="AD"
+        android:inputType="textPersonName"
+        android:maxLength="25"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView34"
+        app:layout_constraintEnd_toEndOf="@+id/editTextKullaniciEkleTC"
+        app:layout_constraintStart_toStartOf="@+id/editTextKullaniciEkleTC"
+        app:layout_constraintTop_toTopOf="@+id/textView34" />
+
+    <EditText
+        android:id="@+id/editTextKullaniciEkleSoyad"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:ems="10"
+        android:hint="SOYAD"
+        android:inputType="textPersonName"
+        android:maxLength="25"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="@+id/editTextKullaniciEkleAd"
+        app:layout_constraintStart_toStartOf="@+id/editTextKullaniciEkleAd"
+        app:layout_constraintTop_toTopOf="@+id/textView37" />
+
+    <EditText
+        android:id="@+id/editTextKullaniciEkleTelefon"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:ems="10"
+        android:hint="TELEFON"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView45"
+        app:layout_constraintEnd_toEndOf="@+id/editTextKullaniciEkleSoyad"
+        app:layout_constraintStart_toStartOf="@+id/editTextKullaniciEkleSoyad"
+        app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+    <EditText
+        android:id="@+id/editTextKullaniciEkleEmail"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:ems="10"
+        android:hint="E-MAİL"
+        android:inputType="textPersonName"
+        android:maxLength="35"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView46"
+        app:layout_constraintEnd_toEndOf="@+id/editTextKullaniciEkleTelefon"
+        app:layout_constraintStart_toStartOf="@+id/editTextKullaniciEkleTelefon"
+        app:layout_constraintTop_toTopOf="@+id/textView46" />
+
+    <Button
+        android:id="@+id/buttonKullaniciEkleKaydet"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/francois_one"
+        android:text="KAYDET"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

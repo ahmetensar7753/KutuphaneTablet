@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAC9">
+
+    <TextView
+        android:id="@+id/textViewKitapAlisYazarAdi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="yazar adı"
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewKitapAlisKitapKategorisi"
+        app:layout_constraintEnd_toEndOf="@+id/textViewKitapAlisKitapAdi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewKitapAlisKitapAdi"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKitapAlisKitapAdi" />
+
+    <TextView
+        android:id="@+id/textViewKitapAlisKitapKategorisi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/francois_one"
+        android:text="kategorisi"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewKitapAlisYazarAdi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewKitapAlisYazarAdi"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKitapAlisYazarAdi" />
+
+    <TextView
+        android:id="@+id/textViewKitapAlisKitapAdi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/francois_one"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textVisiblePassword|textMultiLine|textNoSuggestions"
+        android:text="kitap adı"
+        android:textColor="@color/green"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewKitapAlisYazarAdi"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewKitapAlisResim"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout14"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/layout_bg_corner_radius2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/francois_one"
+            android:text="KİTAP ADI"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout12"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout12"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout12" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/francois_one"
+            android:text="YAZAR ADI"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout13"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout13"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout13" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout13"
+            android:layout_width="420dp"
+            android:layout_height="50dp"
+            android:background="@drawable/layout_bg_corner_radius3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout12"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/spinnerKitapAlisYazarAd"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout12"
+            android:layout_width="420dp"
+            android:layout_height="50dp"
+            android:background="@drawable/layout_bg_corner_radius3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout13"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/spinnerKitapAlisKitapAd"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageViewKitapAlisResim"
+        android:layout_width="250dp"
+        android:layout_height="375dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14"
+        app:srcCompat="@drawable/mahalle_kahvesi_kitap" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/layout_bg_corner_radius2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewKitapAlisYazarAdi"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/francois_one"
+            android:text="Kullanıcı Adı :"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView42"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/francois_one"
+            android:text="Mevcut Puanı :"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/francois_one"
+            android:text="Bugünün Tarihi :"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/francois_one"
+            android:text="Teslim Edilmesi Gereken Süre :"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonKitapAlisTeslimEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <Button
+            android:id="@+id/buttonKitapAlisTeslimEt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/francois_one"
+            android:text="TESLİM ET"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewKitapAlisKullaniciAdi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/francois_one"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView41"
+            app:layout_constraintTop_toTopOf="@+id/textView41" />
+
+        <TextView
+            android:id="@+id/textViewKitapAlisMevcutPuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/francois_one"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView42"
+            app:layout_constraintEnd_toEndOf="@+id/textViewKitapAlisKullaniciAdi"
+            app:layout_constraintStart_toStartOf="@+id/textViewKitapAlisKullaniciAdi"
+            app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textViewKitapAlisBugunTarihi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/francois_one"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView43"
+            app:layout_constraintEnd_toEndOf="@+id/textViewKitapAlisMevcutPuan"
+            app:layout_constraintStart_toStartOf="@+id/textViewKitapAlisMevcutPuan"
+            app:layout_constraintTop_toTopOf="@+id/textView43" />
+
+        <TextView
+            android:id="@+id/textViewKitapAlisIstenenTeslimTarihi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/francois_one"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView44"
+            app:layout_constraintEnd_toEndOf="@+id/textViewKitapAlisBugunTarihi"
+            app:layout_constraintStart_toStartOf="@+id/textViewKitapAlisBugunTarihi"
+            app:layout_constraintTop_toTopOf="@+id/textView44" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

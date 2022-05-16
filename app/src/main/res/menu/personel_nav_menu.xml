@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_kullanici_islemleri"
+        android:icon="@drawable/person_ara"
+        android:title="Kullanıcı İşlemleri" />
+    <item
+        android:id="@+id/action_kitap_islemleri"
+        android:icon="@drawable/kitap_resim"
+        android:title="Kitap İşlemleri" />
+    <item
+        android:id="@+id/action_personel_islemleri"
+        android:icon="@drawable/person2"
+        android:title="Personel İşlemleri" />
+</menu>

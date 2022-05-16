@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ara.xml" value="0.215625" />
+        <entry key="app/src/main/res/drawable/bottom.xml" value="0.215625" />
+        <entry key="app/src/main/res/drawable/ev_resim.xml" value="0.215" />
+        <entry key="app/src/main/res/drawable/layout_bg_corner_radius.xml" value="0.21125" />
+        <entry key="app/src/main/res/drawable/layout_bg_corner_radius2.xml" value="0.20875" />
+        <entry key="app/src/main/res/drawable/layout_bg_corner_radius3.xml" value="0.20875" />
+        <entry key="app/src/main/res/drawable/sag_ok.xml" value="0.21125" />
+        <entry key="app/src/main/res/drawable/yarim_yildiz.xml" value="0.215" />
+        <entry key="app/src/main/res/layout/activity_giris.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_kategori_ara.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/activity_kategori_kitaplari.xml" value="0.17109375" />
+        <entry key="app/src/main/res/layout/activity_kitap_alis_teslim.xml" value="0.13046875" />
+        <entry key="app/src/main/res/layout/activity_kitap_ara.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/activity_kitap_detay.xml" value="0.258984375" />
+        <entry key="app/src/main/res/layout/activity_kitap_raf_duzenle.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/activity_kullanici.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/activity_kullanici2.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/activity_kullanici_detay.xml" value="0.32734375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/activity_personel.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/activity_personel_duzenle.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/activity_yazar_ara.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/activity_yazar_kitaplari.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/alert_tasarim_kitap_puanla.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/card_tasarim_kara_liste.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/card_tasarim_kategori_ara.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/card_tasarim_kitap.xml" value="0.21171875" />
+        <entry key="app/src/main/res/layout/card_tasarim_kitap_ara.xml" value="0.257421875" />
+        <entry key="app/src/main/res/layout/card_tasarim_kitap_raf_duzenle.xml" value="0.30703125" />
+        <entry key="app/src/main/res/layout/card_tasarim_kitap_teslim_al.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/card_tasarim_kullanici.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/card_tasarim_personel_duzenle.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/card_tasarim_yazar_ara.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/fragment_kara_liste.xml" value="0.13984375" />
+        <entry key="app/src/main/res/layout/fragment_kitap.xml" value="0.368359375" />
+        <entry key="app/src/main/res/layout/fragment_kitap_alis.xml" value="0.32734375" />
+        <entry key="app/src/main/res/layout/fragment_kitap_ekle.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_kitap_raf_duzenle.xml" value="0.30703125" />
+        <entry key="app/src/main/res/layout/fragment_kitap_teslim.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/fragment_kullanici.xml" value="0.24921875" />
+        <entry key="app/src/main/res/layout/fragment_kullanici_ekle.xml" value="0.32734375" />
+        <entry key="app/src/main/res/layout/fragment_kullanici_goruntule.xml" value="0.302734375" />
+        <entry key="app/src/main/res/layout/fragment_personel.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/zzz.xml" value="0.232421875" />
+        <entry key="app/src/main/res/menu/kara_liste_menu.xml" value="0.302734375" />
+        <entry key="app/src/main/res/menu/kitap_ara_menu.xml" value="0.302734375" />
+        <entry key="app/src/main/res/menu/kitap_raf_duzenle_menu.xml" value="0.302734375" />
+        <entry key="app/src/main/res/menu/kullanici_ara_menu.xml" value="0.302734375" />
+        <entry key="app/src/main/res/menu/personel_nav_menu.xml" value="0.302734375" />
+        <entry key="app/src/main/res/menu/yazar_ara_menu.xml" value="0.232421875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

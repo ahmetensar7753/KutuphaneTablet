@@ -14,7 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.UserBookHistoryAdapter;
-import com.example.kutuphaneotomasyon.classes.AlinanKitaplar;
+import com.example.kutuphaneotomasyon.classes.TookBook;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +28,7 @@ public class ActivityUser2 extends AppCompatActivity {
 
     private Integer kullaniciID;
     private UserBookHistoryAdapter adapter;
-    private ArrayList<AlinanKitaplar> vtDenCekilenAlinanlar;
+    private ArrayList<TookBook> vtDenCekilenAlinanlar;
     private RecyclerView rvKullaniciKitapGecmisi;
 
     @Override
@@ -63,7 +63,7 @@ public class ActivityUser2 extends AppCompatActivity {
                         String teslimTarih = j.getString("teslim_tarih");
                         String teslimDurumu = j.getString("teslim_durumu");
 
-                        AlinanKitaplar alinanKitap = new AlinanKitaplar(kayitId,kitapAd,yazar,alisTarih,teslimTarih,id);
+                        TookBook alinanKitap = new TookBook(kayitId,kitapAd,yazar,alisTarih,teslimTarih,id);
                         alinanKitap.setTeslim_durumu(Integer.parseInt(teslimDurumu));
 
                         vtDenCekilenAlinanlar.add(alinanKitap);

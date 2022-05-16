@@ -14,17 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.ActivityEditBook;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
+import com.example.kutuphaneotomasyon.classes.Books;
 
 import java.util.ArrayList;
 
 public class EditBookAdapter extends RecyclerView.Adapter<EditBookAdapter.CardNesneTutucuKitapDuzenle>{
 
     private Context mContext;
-    private ArrayList<Kitaplar> disaridanGelenKitaplar = new ArrayList<>();
-    private ArrayList<Kitaplar> fullList;
+    private ArrayList<Books> disaridanGelenKitaplar = new ArrayList<>();
+    private ArrayList<Books> fullList;
 
-    public EditBookAdapter(Context mContext, ArrayList<Kitaplar> disaridanGelenKitaplar) {
+    public EditBookAdapter(Context mContext, ArrayList<Books> disaridanGelenKitaplar) {
         this.mContext = mContext;
         this.disaridanGelenKitaplar = disaridanGelenKitaplar;
         fullList = new ArrayList<>(disaridanGelenKitaplar);
@@ -53,7 +53,7 @@ public class EditBookAdapter extends RecyclerView.Adapter<EditBookAdapter.CardNe
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKitapDuzenle holder, int position) {
-        Kitaplar kitap = disaridanGelenKitaplar.get(position);
+        Books kitap = disaridanGelenKitaplar.get(position);
 
         holder.textViewCardKitapDuzenleKitapAd.setText(kitap.getKitap_ad());
         holder.textViewCardKitapDuzenleYazarAd.setText(kitap.getYazar_ad());
@@ -81,12 +81,12 @@ public class EditBookAdapter extends RecyclerView.Adapter<EditBookAdapter.CardNe
     private Filter Searched_Filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<Kitaplar> filteredList = new ArrayList<>();
+            ArrayList<Books> filteredList = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
                 filteredList.addAll(fullList);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Kitaplar k:fullList){
+                for (Books k:fullList){
                     if (k.getKitap_ad().toLowerCase().contains(filterPattern)){
                         filteredList.add(k);
                     }

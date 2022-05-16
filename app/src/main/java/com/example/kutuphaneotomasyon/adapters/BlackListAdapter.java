@@ -20,7 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.KaraListe;
+import com.example.kutuphaneotomasyon.classes.BlackList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,9 +29,9 @@ import java.util.Map;
 public class BlackListAdapter extends RecyclerView.Adapter<BlackListAdapter.CardNesneTutucuKaraListe>{
 
     private Context mContext;
-    private ArrayList<KaraListe> disaridanGelenKaraListe = new ArrayList<>();
+    private ArrayList<BlackList> disaridanGelenKaraListe = new ArrayList<>();
 
-    public BlackListAdapter(Context mContext, ArrayList<KaraListe> disaridanGelenKaraListe) {
+    public BlackListAdapter(Context mContext, ArrayList<BlackList> disaridanGelenKaraListe) {
         this.mContext = mContext;
         this.disaridanGelenKaraListe = disaridanGelenKaraListe;
     }
@@ -56,7 +56,7 @@ public class BlackListAdapter extends RecyclerView.Adapter<BlackListAdapter.Card
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKaraListe holder, int position) {
-        KaraListe karaListe = disaridanGelenKaraListe.get(position);
+        BlackList karaListe = disaridanGelenKaraListe.get(position);
 
         holder.textViewCardKaraListeAd.setText(karaListe.getAd());
         holder.textViewCardKaraListeTarih.setText(karaListe.getTarih());

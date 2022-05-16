@@ -17,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.BlackListAdapter;
-import com.example.kutuphaneotomasyon.classes.KaraListe;
+import com.example.kutuphaneotomasyon.classes.BlackList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class FragmentBlackList extends Fragment {
 
-    private ArrayList<KaraListe> vtDenCekilenKaraListe;
+    private ArrayList<BlackList> vtDenCekilenKaraListe;
     private RecyclerView rvKaraListe;
     private BlackListAdapter adapter;
 
@@ -59,7 +59,7 @@ public class FragmentBlackList extends Fragment {
                         String ad = j.getString("kayit_ad_soyad");
                         String tarih = j.getString("tarih");
 
-                        KaraListe karaListe = new KaraListe(id,ad,tarih);
+                        BlackList karaListe = new BlackList(id,ad,tarih);
                         vtDenCekilenKaraListe.add(karaListe);
                     }
 

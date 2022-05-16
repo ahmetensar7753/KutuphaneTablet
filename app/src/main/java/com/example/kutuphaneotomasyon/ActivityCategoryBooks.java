@@ -15,8 +15,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.BooksAdapter;
-import com.example.kutuphaneotomasyon.classes.Kategoriler;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
+import com.example.kutuphaneotomasyon.classes.Categorys;
+import com.example.kutuphaneotomasyon.classes.Books;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,12 +28,12 @@ import java.util.Map;
 
 public class ActivityCategoryBooks extends AppCompatActivity {
 
-    private Kategoriler kategori;
+    private Categorys kategori;
 
     private TextView textViewKategoriKitaplariKategoriAdi;
     private RecyclerView rvKategoriKitaplari;
 
-    private ArrayList<Kitaplar> vtDenGelenKitaplar;
+    private ArrayList<Books> vtDenGelenKitaplar;
     private BooksAdapter adapter;
 
     @Override
@@ -44,7 +44,7 @@ public class ActivityCategoryBooks extends AppCompatActivity {
         Integer kategoriID = Integer.parseInt(getIntent().getStringExtra("kategori_id"));
         String kategoriAD = getIntent().getStringExtra("kategori_ad");
 
-        kategori = new Kategoriler(kategoriID,kategoriAD);
+        kategori = new Categorys(kategoriID,kategoriAD);
 
         textViewKategoriKitaplariKategoriAdi = findViewById(R.id.textViewKategoriKitaplariKategoriAdi);
         rvKategoriKitaplari = findViewById(R.id.rvKategoriKitaplari);
@@ -73,7 +73,7 @@ public class ActivityCategoryBooks extends AppCompatActivity {
                         String resimAd = j.getString("kitap_resim_ad");
                         String yazarAd = j.getString("yazar_ad");
 
-                        Kitaplar kitap = new Kitaplar();
+                        Books kitap = new Books();
                         kitap.setKitap_id(id);
                         kitap.setKitap_ad(ad);
                         kitap.setResim_ad(resimAd);

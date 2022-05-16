@@ -25,7 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.UserAdapter;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ public class FragmentShowUser extends Fragment {
     private RecyclerView rvKullanicilar;
     private int sayac0 = 0 ;
 
-    private ArrayList<Kullanicilar> vtDenGelenKullanicilar;
+    private ArrayList<Users> vtDenGelenKullanicilar;
     private UserAdapter adapter;
 
     @Nullable
@@ -114,7 +114,7 @@ public class FragmentShowUser extends Fragment {
                         String ad = j.getString("kullanici_ad");
                         String soyad = j.getString("kullanici_soyad");
 
-                        Kullanicilar k = new Kullanicilar();
+                        Users k = new Users();
                         k.setKullanici_id(id);
                         k.setAd(ad);
                         k.setSoyad(soyad);

@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,7 +37,7 @@ public class ActivityUserDetail extends AppCompatActivity {
     private TextView textViewKullaniciDetayAdSoyad,textViewKullaniciDetayKitapBagisAdet,textViewKullaniciDetayMevcutPuan;
     private EditText editTextKullaniciDetayKitapAdetGir;
 
-    private Kullanicilar gelenKullanici;
+    private Users gelenKullanici;
 
 
     @Override
@@ -54,7 +54,7 @@ public class ActivityUserDetail extends AppCompatActivity {
         textViewKullaniciDetayMevcutPuan = findViewById(R.id.textViewKullaniciDetayMevcutPuan);
         editTextKullaniciDetayKitapAdetGir = findViewById(R.id.editTextKullaniciDetayKitapAdetGir);
 
-        gelenKullanici = new Kullanicilar();
+        gelenKullanici = new Users();
         gelenKullanici.setKullanici_id(Integer.parseInt(getIntent().getStringExtra("kullanici_id")));
         gelenKullanici.setAd(getIntent().getStringExtra("kullanici_ad"));
 

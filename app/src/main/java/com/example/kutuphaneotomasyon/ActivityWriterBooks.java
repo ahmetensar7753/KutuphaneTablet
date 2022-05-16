@@ -15,8 +15,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.BooksAdapter;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
-import com.example.kutuphaneotomasyon.classes.Yazarlar;
+import com.example.kutuphaneotomasyon.classes.Books;
+import com.example.kutuphaneotomasyon.classes.Writers;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,9 +31,9 @@ public class ActivityWriterBooks extends AppCompatActivity {
     private TextView textViewYazarKitaplariYazarAdi;
     private RecyclerView rvYazarKitaplari;
 
-    private Yazarlar yazar;
+    private Writers yazar;
 
-    private ArrayList<Kitaplar> yazarKitaplari;
+    private ArrayList<Books> yazarKitaplari;
     private BooksAdapter adapter;
 
     @Override
@@ -44,7 +44,7 @@ public class ActivityWriterBooks extends AppCompatActivity {
         textViewYazarKitaplariYazarAdi = findViewById(R.id.textViewYazarKitaplariYazarAdi);
         rvYazarKitaplari = findViewById(R.id.rvYazarKitaplari);
 
-        yazar = new Yazarlar();
+        yazar = new Writers();
 
         yazar.setYazar_id(Integer.parseInt(getIntent().getStringExtra("yazar_id")));
         yazar.setYazar_ad(getIntent().getStringExtra("yazar_ad"));
@@ -73,7 +73,7 @@ public class ActivityWriterBooks extends AppCompatActivity {
                         String resimAd = j.getString("kitap_resim_ad");
                         String yazarAd = j.getString("yazar_ad");
 
-                        Kitaplar kitap = new Kitaplar();
+                        Books kitap = new Books();
                         kitap.setKitap_id(id);
                         kitap.setKitap_ad(ad);
                         kitap.setResim_ad(resimAd);

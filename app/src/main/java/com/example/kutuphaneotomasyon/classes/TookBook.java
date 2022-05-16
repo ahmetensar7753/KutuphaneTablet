@@ -1,6 +1,6 @@
 package com.example.kutuphaneotomasyon.classes;
 
-public class AlinanKitaplar {
+public class TookBook {
 
     private int kayit_id;
     private String kitap_ad;
@@ -18,10 +18,10 @@ public class AlinanKitaplar {
         this.teslim_durumu = teslim_durumu;
     }
 
-    public AlinanKitaplar() {
+    public TookBook() {
     }
 
-    public AlinanKitaplar(int kayit_id, String kitap_ad, String kitap_yazar, String alis_tarih, String istenen_teslim_tarih, int kullanici_id) {
+    public TookBook(int kayit_id, String kitap_ad, String kitap_yazar, String alis_tarih, String istenen_teslim_tarih, int kullanici_id) {
         this.kayit_id = kayit_id;
         this.kitap_ad = kitap_ad;
         this.kitap_yazar = kitap_yazar;

@@ -22,8 +22,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.TookBookAdapter;
-import com.example.kutuphaneotomasyon.classes.AlinanKitaplar;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.TookBook;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,9 +45,9 @@ public class FragmentDeliveryBook extends Fragment {
     private TextView textViewTarih;
 
     public static Calendar beklenenTeslimTarihi;
-    private Kullanicilar kullanici = new Kullanicilar();
+    private Users kullanici = new Users();
 
-    private ArrayList<AlinanKitaplar> vtDenCekilenAlinanlar;
+    private ArrayList<TookBook> vtDenCekilenAlinanlar;
     private TookBookAdapter adapter;
 
     @Nullable
@@ -129,7 +129,7 @@ public class FragmentDeliveryBook extends Fragment {
                         String teslimTarih = j.getString("teslim_tarih");
                         String teslimDurumu = j.getString("teslim_durumu");
 
-                        AlinanKitaplar alinanKitap = new AlinanKitaplar(kayitId,kitapAd,yazar,alisTarih,teslimTarih,kullanici_id);
+                        TookBook alinanKitap = new TookBook(kayitId,kitapAd,yazar,alisTarih,teslimTarih,kullanici_id);
                         alinanKitap.setTeslim_durumu(Integer.parseInt(teslimDurumu));
 
                         vtDenCekilenAlinanlar.add(alinanKitap);
@@ -234,7 +234,7 @@ public class FragmentDeliveryBook extends Fragment {
         Volley.newRequestQueue(getActivity()).add(istek);
     }
 
-    public void notGuncelle(Kullanicilar k){
+    public void notGuncelle(Users k){
         String url = "https://kristalekmek.com/kutuphane/kullanicilar/update_not.php";
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

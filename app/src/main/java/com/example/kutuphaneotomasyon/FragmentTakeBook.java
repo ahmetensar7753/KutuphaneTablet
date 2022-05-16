@@ -25,8 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Books;
+import com.example.kutuphaneotomasyon.classes.Users;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -50,12 +50,12 @@ public class FragmentTakeBook extends Fragment {
     private Button buttonKitapAlisTeslimEt;
 
     private Integer kullaniciID = ActivityBookInteraction.kullaniciID;
-    private Kullanicilar kullanici;
+    private Users kullanici;
     private Calendar teslmTarihi;
 
     private ArrayList<String> yazarlarArrayList;
     private ArrayList<String> kitaplarSTRListesi;
-    private ArrayList<Kitaplar> kitaplarArrayList;
+    private ArrayList<Books> kitaplarArrayList;
 
     private ArrayAdapter<String> veriAdapter1;
     private ArrayAdapter<String> veriAdapter2;
@@ -125,7 +125,7 @@ public class FragmentTakeBook extends Fragment {
         spinnerKitapAlisKitapAd.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Kitaplar k = kitaplarArrayList.get(position);
+                Books k = kitaplarArrayList.get(position);
                 textViewKitapAlisKitapAdi.setText(k.getKitap_ad());
                 textViewKitapAlisYazarAdi.setText(k.getYazar_ad());
                 textViewKitapAlisKitapKategorisi.setText(k.getKategori_ad());
@@ -199,7 +199,7 @@ public class FragmentTakeBook extends Fragment {
                         String yazarAD = j.getString("yazar_ad");
                         String kategoriAD = j.getString("kategori_ad");
 
-                        Kitaplar kitap = new Kitaplar();
+                        Books kitap = new Books();
                         kitap.setKitap_id(kitapID);
                         kitap.setKitap_ad(kitapAD);
                         kitap.setYazar_ad(yazarAD);
@@ -240,7 +240,7 @@ public class FragmentTakeBook extends Fragment {
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                kullanici = new Kullanicilar();
+                kullanici = new Users();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray list = jsonObject.getJSONArray("kullanici_table");

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.FragmentDeliveryBook;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.AlinanKitaplar;
+import com.example.kutuphaneotomasyon.classes.TookBook;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,9 +23,9 @@ import java.util.Calendar;
 public class TookBookAdapter extends RecyclerView.Adapter<TookBookAdapter.CardNesneTutucuAlinanlar>{
 
     private Context mContext;
-    private ArrayList<AlinanKitaplar> disaridanGelenAlinanlar = new ArrayList<>();
+    private ArrayList<TookBook> disaridanGelenAlinanlar = new ArrayList<>();
 
-    public TookBookAdapter(Context mContext, ArrayList<AlinanKitaplar> disaridanGelenAlinanlar) {
+    public TookBookAdapter(Context mContext, ArrayList<TookBook> disaridanGelenAlinanlar) {
         this.mContext = mContext;
         this.disaridanGelenAlinanlar = disaridanGelenAlinanlar;
     }
@@ -56,7 +56,7 @@ public class TookBookAdapter extends RecyclerView.Adapter<TookBookAdapter.CardNe
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuAlinanlar holder, int position) {
-        AlinanKitaplar alinanKitap = disaridanGelenAlinanlar.get(position);
+        TookBook alinanKitap = disaridanGelenAlinanlar.get(position);
 
         holder.textViewCardKitapTeslimKayitID.setText(String.valueOf(alinanKitap.getKayit_id()));
         holder.textViewCardKitapTeslimKitapAd.setText(alinanKitap.getKitap_ad());

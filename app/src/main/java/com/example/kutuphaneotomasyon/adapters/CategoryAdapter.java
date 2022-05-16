@@ -13,16 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.ActivityCategoryBooks;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.Kategoriler;
+import com.example.kutuphaneotomasyon.classes.Categorys;
 
 import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CardNesneTutucuKategori>{
 
     private Context mContext;
-    private ArrayList<Kategoriler> disaridanGelenKategoriler = new ArrayList<>();
+    private ArrayList<Categorys> disaridanGelenKategoriler = new ArrayList<>();
 
-    public CategoryAdapter(Context mContext, ArrayList<Kategoriler> disaridanGelenKategoriler) {
+    public CategoryAdapter(Context mContext, ArrayList<Categorys> disaridanGelenKategoriler) {
         this.mContext = mContext;
         this.disaridanGelenKategoriler = disaridanGelenKategoriler;
     }
@@ -46,7 +46,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CardNe
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKategori holder, int position) {
-        Kategoriler kategori = disaridanGelenKategoriler.get(position);
+        Categorys kategori = disaridanGelenKategoriler.get(position);
 
         holder.textViewCardKategoriAdi.setText(kategori.getAd());
         holder.cardViewKategori.setOnClickListener(new View.OnClickListener() {

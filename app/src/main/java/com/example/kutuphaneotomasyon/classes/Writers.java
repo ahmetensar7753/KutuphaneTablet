@@ -1,14 +1,14 @@
 package com.example.kutuphaneotomasyon.classes;
 
-public class Yazarlar {
+public class Writers {
 
     private int yazar_id;
     private String yazar_ad;
 
-    public Yazarlar() {
+    public Writers() {
     }
 
-    public Yazarlar(int yazar_id, String yazar_ad) {
+    public Writers(int yazar_id, String yazar_ad) {
         this.yazar_id = yazar_id;
         this.yazar_ad = yazar_ad;
     }

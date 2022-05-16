@@ -14,17 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.ActivityUserDetail;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import java.util.ArrayList;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CardNesneTutucuKullanici>{
 
     private Context mContext;
-    private ArrayList<Kullanicilar> disaridanGelenKullanicilar = new ArrayList<>();
-    private ArrayList<Kullanicilar> fullList;
+    private ArrayList<Users> disaridanGelenKullanicilar = new ArrayList<>();
+    private ArrayList<Users> fullList;
 
-    public UserAdapter(Context mContext, ArrayList<Kullanicilar> disaridanGelenKullanicilar) {
+    public UserAdapter(Context mContext, ArrayList<Users> disaridanGelenKullanicilar) {
         this.mContext = mContext;
         this.disaridanGelenKullanicilar = disaridanGelenKullanicilar;
         fullList = new ArrayList<>(disaridanGelenKullanicilar);
@@ -49,7 +49,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CardNesneTutuc
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKullanici holder, int position) {
-        Kullanicilar kullanici = disaridanGelenKullanicilar.get(position);
+        Users kullanici = disaridanGelenKullanicilar.get(position);
 
         holder.textViewCardKullaniciAd.setText(kullanici.getAd()+" "+kullanici.getSoyad());
         holder.cardKullaniciAd.setOnClickListener(new View.OnClickListener() {
@@ -74,12 +74,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CardNesneTutuc
     private Filter Searched_Filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<Kullanicilar> filteredList = new ArrayList<>();
+            ArrayList<Users> filteredList = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
                 filteredList.addAll(fullList);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Kullanicilar k:fullList){
+                for (Users k:fullList){
                     if (k.getAd().toLowerCase().contains(filterPattern)){
                         filteredList.add(k);
                     }

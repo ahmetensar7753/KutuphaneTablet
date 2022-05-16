@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Kullanicilar {
+public class Users {
 
     private int kullanici_id;
     private String tc;
@@ -25,10 +25,10 @@ public class Kullanicilar {
 
 
 
-    public Kullanicilar() {
+    public Users() {
     }
 
-    public Kullanicilar(String tc, String ad, String soyad, String telefon, String mail) {
+    public Users(String tc, String ad, String soyad, String telefon, String mail) {
         this.tc = tc;
         this.ad = ad;
         this.soyad = soyad;

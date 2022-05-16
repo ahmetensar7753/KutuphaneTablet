@@ -1,13 +1,13 @@
 package com.example.kutuphaneotomasyon.classes;
 
-public class Kategoriler {
+public class Categorys {
     private int kategori_id;
     private String ad;
 
-    public Kategoriler() {
+    public Categorys() {
     }
 
-    public Kategoriler(int kategori_id, String ad) {
+    public Categorys(int kategori_id, String ad) {
         this.kategori_id = kategori_id;
         this.ad = ad;
     }

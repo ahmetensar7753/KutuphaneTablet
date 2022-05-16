@@ -18,7 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.WriterAdapter;
-import com.example.kutuphaneotomasyon.classes.Yazarlar;
+import com.example.kutuphaneotomasyon.classes.Writers;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +31,7 @@ public class ActivityWriterSearch extends AppCompatActivity {
     private Toolbar toolbarYazarAra;
     private RecyclerView rvYazarAra;
 
-    private ArrayList<Yazarlar> vtDenGelenYazarlar;
+    private ArrayList<Writers> vtDenGelenYazarlar;
     private WriterAdapter adapter;
 
     @Override
@@ -90,7 +90,7 @@ public class ActivityWriterSearch extends AppCompatActivity {
                         Integer yazarID = j.getInt("yazar_id");
                         String yazarAD = j.getString("yazar_ad");
 
-                        Yazarlar yazar = new Yazarlar(yazarID,yazarAD);
+                        Writers yazar = new Writers(yazarID,yazarAD);
                         vtDenGelenYazarlar.add(yazar);
                     }
 

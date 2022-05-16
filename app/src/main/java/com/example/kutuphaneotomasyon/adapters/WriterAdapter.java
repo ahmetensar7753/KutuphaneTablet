@@ -14,17 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.R;
 import com.example.kutuphaneotomasyon.ActivityWriterBooks;
-import com.example.kutuphaneotomasyon.classes.Yazarlar;
+import com.example.kutuphaneotomasyon.classes.Writers;
 
 import java.util.ArrayList;
 
 public class WriterAdapter extends RecyclerView.Adapter<WriterAdapter.CardNesneTutucuYazar>{
 
     private Context mContext;
-    private ArrayList<Yazarlar> disaridanGelenYazarlar = new ArrayList<>();
-    private ArrayList<Yazarlar> fullList;
+    private ArrayList<Writers> disaridanGelenYazarlar = new ArrayList<>();
+    private ArrayList<Writers> fullList;
 
-    public WriterAdapter(Context mContext, ArrayList<Yazarlar> disaridanGelenYazarlar) {
+    public WriterAdapter(Context mContext, ArrayList<Writers> disaridanGelenYazarlar) {
         this.mContext = mContext;
         this.disaridanGelenYazarlar = disaridanGelenYazarlar;
         fullList = new ArrayList<>(disaridanGelenYazarlar);
@@ -49,7 +49,7 @@ public class WriterAdapter extends RecyclerView.Adapter<WriterAdapter.CardNesneT
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuYazar holder, int position) {
-        Yazarlar yazar = disaridanGelenYazarlar.get(position);
+        Writers yazar = disaridanGelenYazarlar.get(position);
 
         holder.textViewCardYazarAdi.setText(yazar.getYazar_ad());
         holder.cardViewYazar.setOnClickListener(new View.OnClickListener() {
@@ -74,12 +74,12 @@ public class WriterAdapter extends RecyclerView.Adapter<WriterAdapter.CardNesneT
     private Filter Searched_Filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<Yazarlar> filteredList = new ArrayList<>();
+            ArrayList<Writers> filteredList = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
                 filteredList.addAll(fullList);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Yazarlar y:fullList){
+                for (Writers y:fullList){
                     if (y.getYazar_ad().toLowerCase().contains(filterPattern)){
                         filteredList.add(y);
                     }

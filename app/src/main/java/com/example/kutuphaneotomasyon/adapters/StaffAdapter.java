@@ -13,16 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kutuphaneotomasyon.ActivityEditStaff;
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import java.util.ArrayList;
 
 public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.CardNesneTutucuPersonel>{
 
     private Context mContext;
-    private ArrayList<Kullanicilar> disaridanGelenPersonelle = new ArrayList<>();
+    private ArrayList<Users> disaridanGelenPersonelle = new ArrayList<>();
 
-    public StaffAdapter(Context mContext, ArrayList<Kullanicilar> disaridanGelenPersonelle) {
+    public StaffAdapter(Context mContext, ArrayList<Users> disaridanGelenPersonelle) {
         this.mContext = mContext;
         this.disaridanGelenPersonelle = disaridanGelenPersonelle;
     }
@@ -48,7 +48,7 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.CardNesneTut
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuPersonel holder, int position) {
-        Kullanicilar personel = disaridanGelenPersonelle.get(position);
+        Users personel = disaridanGelenPersonelle.get(position);
 
         holder.textViewCardPerAd.setText(personel.getAd()+" "+personel.getSoyad());
         holder.textViewCardPerTel.setText(personel.getTelefon());

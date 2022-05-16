@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.kutuphaneotomasyon.R;
-import com.example.kutuphaneotomasyon.classes.AlinanKitaplar;
+import com.example.kutuphaneotomasyon.classes.TookBook;
 
 
 
@@ -23,9 +23,9 @@ import java.util.ArrayList;
 public class UserBookHistoryAdapter extends RecyclerView.Adapter<UserBookHistoryAdapter.CardNesneTutucuKitapGecmis>{
 
     private Context mContext;
-    private ArrayList<AlinanKitaplar> disaridanGelenAlinanlar = new ArrayList<>();
+    private ArrayList<TookBook> disaridanGelenAlinanlar = new ArrayList<>();
 
-    public UserBookHistoryAdapter(Context mContext, ArrayList<AlinanKitaplar> disaridanGelenAlinanlar) {
+    public UserBookHistoryAdapter(Context mContext, ArrayList<TookBook> disaridanGelenAlinanlar) {
         this.mContext = mContext;
         this.disaridanGelenAlinanlar = disaridanGelenAlinanlar;
     }
@@ -54,7 +54,7 @@ public class UserBookHistoryAdapter extends RecyclerView.Adapter<UserBookHistory
 
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKitapGecmis holder, int position) {
-        AlinanKitaplar alinanKitap = disaridanGelenAlinanlar.get(position);
+        TookBook alinanKitap = disaridanGelenAlinanlar.get(position);
 
         holder.textViewCardKitapTeslimKayitID.setText(String.valueOf(alinanKitap.getKayit_id()));
         holder.textViewCardKitapTeslimKitapAd.setText(alinanKitap.getKitap_ad());

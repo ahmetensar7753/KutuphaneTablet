@@ -25,7 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.EditBookAdapter;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
+import com.example.kutuphaneotomasyon.classes.Books;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ public class FragmentEditBook extends Fragment {
     private RecyclerView rvKitapRafDuzenle;
     private int sayac2 = 0;
 
-    private ArrayList<Kitaplar> vtDenCekilenKitaplar;
+    private ArrayList<Books> vtDenCekilenKitaplar;
     private EditBookAdapter adapter;
 
     @Nullable
@@ -111,7 +111,7 @@ public class FragmentEditBook extends Fragment {
                         String yazarAD = j.getString("yazar_ad");
                         String kategoriAD = j.getString("kategori_ad");
 
-                        Kitaplar kitap = new Kitaplar();
+                        Books kitap = new Books();
                         kitap.setKitap_id(kitapID);
                         kitap.setKitap_ad(kitapAD);
                         kitap.setBolge(kitapBolge);

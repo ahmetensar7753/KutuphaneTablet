@@ -15,7 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +28,7 @@ public class ActivitySignIn extends AppCompatActivity {
     private Button buttonGiris;
     private EditText editTextKullaniciAdi,editTextParola;
 
-    private ArrayList<Kullanicilar> vtDenCekilenKullanicilar;
+    private ArrayList<Users> vtDenCekilenKullanicilar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class ActivitySignIn extends AppCompatActivity {
 
         //hata engellemek için olan kısım
         vtDenCekilenKullanicilar = new ArrayList<>();
-        Kullanicilar bosKullanici = new Kullanicilar();
+        Users bosKullanici = new Users();
         bosKullanici.setMail("1sdfdsfsdf");
         bosKullanici.setSifre("1hfgewerwer");
         bosKullanici.setKullanici_id(931014);
@@ -58,9 +58,9 @@ public class ActivitySignIn extends AppCompatActivity {
                     String girilenSifre = editTextParola.getText().toString();
 
                     int index = 0;
-                    Kullanicilar tempKullanici = new Kullanicilar();
+                    Users tempKullanici = new Users();
 
-                    for (Kullanicilar k : vtDenCekilenKullanicilar){
+                    for (Users k : vtDenCekilenKullanicilar){
                         if (k.getMail().equals(girilenMail) && k.getSifre().equals(girilenSifre)){
                             index = vtDenCekilenKullanicilar.indexOf(k);
                             tempKullanici.setKullanici_id(k.getKullanici_id());
@@ -112,7 +112,7 @@ public class ActivitySignIn extends AppCompatActivity {
                             yetki = false;
                         }
 
-                        Kullanicilar k = new Kullanicilar();
+                        Users k = new Users();
                         k.setKullanici_id(id);
                         k.setMail(mail);
                         k.setSifre(sifre);

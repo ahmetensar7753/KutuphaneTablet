@@ -12,7 +12,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.CategoryAdapter;
-import com.example.kutuphaneotomasyon.classes.Kategoriler;
+import com.example.kutuphaneotomasyon.classes.Categorys;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class ActivityCategorySearch extends AppCompatActivity {
 
     private RecyclerView rvKategoriAra;
-    private ArrayList<Kategoriler> vtDenCekilenKategoriler;
+    private ArrayList<Categorys> vtDenCekilenKategoriler;
     private CategoryAdapter adapter;
 
     @Override
@@ -53,7 +53,7 @@ public class ActivityCategorySearch extends AppCompatActivity {
                         Integer kategoriID = j.getInt("kategori_id");
                         String kategoriAD = j.getString("kategori_ad");
 
-                        Kategoriler k = new Kategoriler(kategoriID,kategoriAD);
+                        Categorys k = new Categorys(kategoriID,kategoriAD);
 
                         vtDenCekilenKategoriler.add(k);
                     }

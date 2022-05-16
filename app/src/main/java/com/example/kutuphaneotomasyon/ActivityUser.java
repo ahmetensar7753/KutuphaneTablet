@@ -15,7 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +31,7 @@ public class ActivityUser extends AppCompatActivity {
     private Button buttonAldigiKitaplariGoruntule;
 
     private Integer kullaniciID;
-    private Kullanicilar personel;
+    private Users personel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class ActivityUser extends AppCompatActivity {
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                personel = new Kullanicilar();
+                personel = new Users();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray liste = jsonObject.getJSONArray("kullanici_table");

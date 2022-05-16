@@ -24,7 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kategoriler;
+import com.example.kutuphaneotomasyon.classes.Categorys;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +40,7 @@ public class FragmentAddBook extends Fragment {
     private Spinner spinnerKitapEkleKategori;
     private Button buttonKitapEkleEkle;
 
-    private ArrayList<Kategoriler> vtDenCekilenKategoriler;
+    private ArrayList<Categorys> vtDenCekilenKategoriler;
     private ArrayList<String> kategoriAdListesi;
     private ArrayAdapter<String> veriAdapter;
 
@@ -127,7 +127,7 @@ public class FragmentAddBook extends Fragment {
                         Integer kategoriID = j.getInt("kategori_id");
                         String kategoriAD = j.getString("kategori_ad");
 
-                        Kategoriler k = new Kategoriler(kategoriID,kategoriAD);
+                        Categorys k = new Categorys(kategoriID,kategoriAD);
 
                         vtDenCekilenKategoriler.add(k);
                         kategoriAdListesi.add(k.getAd());

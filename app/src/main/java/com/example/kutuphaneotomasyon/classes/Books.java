@@ -1,6 +1,6 @@
 package com.example.kutuphaneotomasyon.classes;
 
-public class Kitaplar {
+public class Books {
 
     private int kitap_id;
     private String kitap_ad;
@@ -32,10 +32,10 @@ public class Kitaplar {
         this.oy_say = oy_say;
     }
 
-    public Kitaplar() {
+    public Books() {
     }
 
-    public Kitaplar(String kitap_ad, String ozet, String bolge, String raf, int bagli_kategori_id, String yazar_ad, String kategori_ad) {
+    public Books(String kitap_ad, String ozet, String bolge, String raf, int bagli_kategori_id, String yazar_ad, String kategori_ad) {
         this.kitap_ad = kitap_ad;
         this.ozet = ozet;
         this.bolge = bolge;

@@ -19,8 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kategoriler;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
+import com.example.kutuphaneotomasyon.classes.Categorys;
+import com.example.kutuphaneotomasyon.classes.Books;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,11 +37,11 @@ public class ActivityEditBook extends AppCompatActivity {
     private Button buttonKitapRafDuzenleGuncelle;
     private Spinner spinnerKitapDuzenleKategori;
 
-    private ArrayList<Kategoriler> vtDenCekilenKategoriler;
+    private ArrayList<Categorys> vtDenCekilenKategoriler;
     private ArrayList<String> kategoriAdListesi;
     private ArrayAdapter<String> veriAdapter;
 
-    private Kitaplar kitap;
+    private Books kitap;
     private Integer gelenKitapID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class ActivityEditBook extends AppCompatActivity {
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                kitap = new Kitaplar();
+                kitap = new Books();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray list = jsonObject.getJSONArray("kitaplar_table");
@@ -157,7 +157,7 @@ public class ActivityEditBook extends AppCompatActivity {
             public void onResponse(String response) {
                 vtDenCekilenKategoriler = new ArrayList<>();
                 kategoriAdListesi = new ArrayList<>();
-                Kategoriler kitabınKategorisi = new Kategoriler();
+                Categorys kitabınKategorisi = new Categorys();
                 vtDenCekilenKategoriler.add(kitabınKategorisi);
                 kategoriAdListesi.add(kitapKategori);
                 try {
@@ -171,7 +171,7 @@ public class ActivityEditBook extends AppCompatActivity {
                         String kategoriAD = j.getString("kategori_ad");
 
                         if (!kategoriAD.equals(kitapKategori)){
-                            Kategoriler k = new Kategoriler(kategoriID,kategoriAD);
+                            Categorys k = new Categorys(kategoriID,kategoriAD);
 
                             vtDenCekilenKategoriler.add(k);
                             kategoriAdListesi.add(k.getAd());

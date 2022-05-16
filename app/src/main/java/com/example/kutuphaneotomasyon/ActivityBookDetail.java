@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kitaplar;
+import com.example.kutuphaneotomasyon.classes.Books;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -42,7 +42,7 @@ public class ActivityBookDetail extends AppCompatActivity {
     private ImageView imageViewKitapDetayAnaSayfaDon;
 
     private Integer kitapID;
-    private Kitaplar kitap;
+    private Books kitap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +108,7 @@ public class ActivityBookDetail extends AppCompatActivity {
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                kitap = new Kitaplar();
+                kitap = new Books();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray list = jsonObject.getJSONArray("kitaplar_table");

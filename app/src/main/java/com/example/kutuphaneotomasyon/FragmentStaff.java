@@ -17,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kutuphaneotomasyon.adapters.StaffAdapter;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class FragmentStaff extends Fragment {
 
     private RecyclerView rvPersonelDuzenle;
-    private ArrayList<Kullanicilar> vtDenCekilenPersoneller;
+    private ArrayList<Users> vtDenCekilenPersoneller;
 
     private StaffAdapter adapter;
 
@@ -62,7 +62,7 @@ public class FragmentStaff extends Fragment {
                         String telefon = j.getString("kullanici_telefon");
                         String gorev = j.getString("gorev");
 
-                        Kullanicilar personel = new Kullanicilar();
+                        Users personel = new Users();
                         personel.setKullanici_id(id);
                         personel.setAd(ad);
                         personel.setSoyad(soyad);

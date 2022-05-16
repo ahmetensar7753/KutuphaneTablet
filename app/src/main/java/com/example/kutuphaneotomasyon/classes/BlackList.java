@@ -1,14 +1,14 @@
 package com.example.kutuphaneotomasyon.classes;
 
-public class KaraListe {
+public class BlackList {
     private int kayit_id;
     private String ad;
     private String tarih;
 
-    public KaraListe() {
+    public BlackList() {
     }
 
-    public KaraListe(int kayit_id, String ad, String tarih) {
+    public BlackList(int kayit_id, String ad, String tarih) {
         this.kayit_id = kayit_id;
         this.ad = ad;
         this.tarih = tarih;

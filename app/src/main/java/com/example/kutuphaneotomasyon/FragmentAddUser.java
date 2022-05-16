@@ -19,7 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kutuphaneotomasyon.classes.Kullanicilar;
+import com.example.kutuphaneotomasyon.classes.Users;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -54,7 +54,7 @@ public class FragmentAddUser extends Fragment {
                         !editTextKullaniciEkleEmail.getText().toString().trim().equals("")){
 
                     //kullanicinin sifresi = tc şeklinde otomatik Kullanicilar class'ı içinde cons'ta atanıyor.
-                    Kullanicilar kullanici = new Kullanicilar(editTextKullaniciEkleTC.getText().toString(),
+                    Users kullanici = new Users(editTextKullaniciEkleTC.getText().toString(),
                             editTextKullaniciEkleAd.getText().toString(),
                             editTextKullaniciEkleSoyad.getText().toString(),
                             editTextKullaniciEkleTelefon.getText().toString(),

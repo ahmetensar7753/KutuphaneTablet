@@ -47,9 +47,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CardNesneTutuc
         return new CardNesneTutucuKullanici(view);
     }
 
-    /* burada kullanıcılar cardView'lara yerleştiriliyor ve
-    * cardView'a tıklandığında ilgili kullanıcıyla ilgili işlemlerin yapılabildiği activity'e ilgili kişinin bilgileri taşınarak geçiş sağlanıyor.*/
-
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKullanici holder, int position) {
         Users kullanici = disaridanGelenKullanicilar.get(position);
@@ -71,8 +68,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CardNesneTutuc
     public int getItemCount() {
         return disaridanGelenKullanicilar.size();
     }
-
-    // Filter sınıfı ile kullanıcılar filitrelenebiliyor.Aratılan kullanıcıya göre RecyclerView içerisinde listeleniyor.
 
     public Filter getFilter(){return Searched_Filter;}
 

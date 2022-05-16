@@ -8,3 +8,7 @@ Kütüphanenin belirli bölgelerine sağlanacak tabletle kullanıcıların siste
 Örnek personel giriş bilgileri:
 asd
 123
+
+Örnek kullanıcı giriş bilgileri:
+krmzburak@hotmail.com
+1111

@@ -44,9 +44,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CardNe
         return new CardNesneTutucuKategori(view);
     }
 
-    // onBindViewHolder içerisinde veriler yerleştiriliyor ve kategoriler listeleniyor.
-    // CardView'a tıklandığında ilgili kategorinin kitaplarının bulunduğu activity'e geçiş sağlanıyor.
-    // geçişte id ve kategori adı diğer tarafa taşınıyor. Diğer tarafta id'ye göre ilgili kitaplar bilgilire vt'den çekiliyor.
     @Override
     public void onBindViewHolder(@NonNull CardNesneTutucuKategori holder, int position) {
         Categorys kategori = disaridanGelenKategoriler.get(position);

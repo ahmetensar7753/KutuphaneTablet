@@ -64,7 +64,6 @@ public class TookBookAdapter extends RecyclerView.Adapter<TookBookAdapter.CardNe
         holder.textViewCardKitapTeslimAlisTarihi.setText(alinanKitap.getAlis_tarih());
         holder.textViewCardKitapTeslimTeslimTarihi.setText(alinanKitap.getIstenen_teslim_tarih());
 
-        // if else bloğunda kitabın teslim edilip edilmediğinin kontrolü yapılıyor. Ona göre imageView'a tik yada çarpı imageleri set ediliyor.
         if (alinanKitap.getTeslim_durumu() == 1){
             holder.imageViewCardKitapTeslimDurumu.setImageResource(R.drawable.check);
         }else {

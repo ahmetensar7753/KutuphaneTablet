@@ -27,10 +27,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ActivityBookSearch extends AppCompatActivity {
-
+    // Toolbar işlemleri onCreate metodu başlangıcında.
+    // RecyclerView işlemleri kitaplarıCek fonksiyonu içerisinde yapılıyor.
     private Toolbar toolbarKitapAra;
     private RecyclerView rvKitapAra;
 
+    // Buradaki arrayList nesnesi veritabanına istek yapan fonksiyon içerisinde kaldırılıyor ve içerisine gelen veriye göre
+    // nesne üretilip veri dolduruluyor.
     private ArrayList<Books> vtDenGelenKitaplar;
     private BooksAdapter adapter;
 
@@ -50,6 +53,8 @@ public class ActivityBookSearch extends AppCompatActivity {
 
     }
 
+    // Burada SearchView sınıfı sayesinde adapter üzerinde filitreleme yapılabiliyor.
+    // Adapter içerisindeki Filter sınıfı ile de aratılan veriye göre listeleme yapılabiliyor.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_book_menu,menu);
@@ -102,7 +107,8 @@ public class ActivityBookSearch extends AppCompatActivity {
 
                         vtDenGelenKitaplar.add(kitap);
                     }
-
+                    // Yukarıdaki döngü içerisinde doldurulan arrayList bu kısımda adapter'a veriliyor.
+                    // ve ardından adapter recyclerView'a set ediliyor.
                     adapter = new BooksAdapter(ActivityBookSearch.this,vtDenGelenKitaplar);
                     rvKitapAra.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
                     rvKitapAra.setAdapter(adapter);

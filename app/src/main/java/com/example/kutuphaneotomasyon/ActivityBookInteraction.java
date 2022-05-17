@@ -1,3 +1,13 @@
+/* Bu activity'de fragment yapısı kullanılıyor.
+Bu activity'ye geçişte taşınan kullanıcıID activity yüklenirken static bir değişkene alınıyor.
+Bu statik değişkene fragment içerisinden erişiliyor.
+
+-Sınıfın başında tanımlanan array listlere fragment nesneleri ve başlıkları için oluşturuluyor.
+onCreate metodu içerisinde viewPager2 yapısıyla berabet fragment işlemleri gerçekleştiriliyor.
+
+-MyViewPagerAdapterKitap inner class'ı ile de fragment listesinin size'ı, position'ı alınıyor ve yapıcı metoduyla(super) adapter yapısı tanımlanmış oluyor.
+ onCreate metodu içinde ise bu adapter nesnesi üretiliyor.*/
+
 package com.example.kutuphaneotomasyon;
 
 import androidx.annotation.NonNull;

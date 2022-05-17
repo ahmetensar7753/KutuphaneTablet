@@ -60,11 +60,13 @@ public class ActivityBookDetail extends AppCompatActivity {
         textViewKitapDetayKitapOzet = findViewById(R.id.textViewKitapDetayKitapOzet);
         imageViewKitapDetayAnaSayfaDon = findViewById(R.id.imageViewKitapDetayAnaSayfaDon);
 
-        kitapID = Integer.parseInt(getIntent().getStringExtra("kitap_id"));
 
+        // önceki activity'den gelen kitapID, bu activity yüklenirken burada çekiliyor.
+        kitapID = Integer.parseInt(getIntent().getStringExtra("kitap_id"));
+        //burada ise id'ye göre kitapCek fonksiyonu çağırılıyor. Vt'den id'ye göre sorgu yapılıyor.
         kitapCek(kitapID);
 
-
+        // kitabı puanla butonuna tıklandıktan sonra alertView açılıyor ve bu alert view içerisinde rating bar ile puan verilebiliyor.
         buttonKitapDetayKitabiPuanla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,8 @@ public class ActivityBookDetail extends AppCompatActivity {
                 bd.setIcon(R.drawable.half_star);
                 bd.setView(view);
 
+                /* puan verip oyla butonuyla beraber gelen kitabın toplam puan
+                *  hesaplamasıyla beraber puanVer fonskiyonuna parametre olarak veirlerek vt'ye kaydı sağlanıyor.*/
                 bd.setPositiveButton("OYLA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -103,6 +107,8 @@ public class ActivityBookDetail extends AppCompatActivity {
 
     }
 
+    /* bu fonksiyonda id'ye göre ilgili kitap bilgileri çekiliyor.
+    *  Gelen kitap bilgileriyle beraber nesne üretiliyor ve ardından gerekli kısımlara yazdırılıyor.*/
     public void kitapCek(int kitap_id){
         String url = "https://kristalekmek.com/kutuphane/kitaplar/kitap_cek.php";
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

@@ -41,16 +41,22 @@ public class ActivityCategoryBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_books);
 
+        // Önceki Activity'den gelen kategori bilgileri burada alınıyor.
         Integer kategoriID = Integer.parseInt(getIntent().getStringExtra("kategori_id"));
         String kategoriAD = getIntent().getStringExtra("kategori_ad");
 
+        // alınan kategori bilgilerine göre tanımlanan kategori nesnesi kaldırılıp gelen değer atamaları cons. veriliyor.
         kategori = new Categorys(kategoriID,kategoriAD);
 
         textViewKategoriKitaplariKategoriAdi = findViewById(R.id.textViewKategoriKitaplariKategoriAdi);
         rvKategoriKitaplari = findViewById(R.id.rvKategoriKitaplari);
 
+        // kategori ad sayfanın başındaki başlık olan textView'a set ediliyor.
         textViewKategoriKitaplariKategoriAdi.setText(kategori.getAd());
 
+        // kategori id'ye göre listelenecek olan kitapların çekilmesi için kategoriKitaplariCek fonks. id ile çağırılıyor.
+        // bu metod içerisinde adapter'a verilecek olan arrayList kaldırılıp, gelen veriye göre üretilen nesneler bu arrayList'e atılıyor.
+        // bu işlemlerden sonra hazır olan arrayList adapter nesnesi ayağa kaldırılırken yapıcı fonksiyonuna parametre olarak veriliyor.
         kategoriKitaplariCek(kategori.getKategori_id());
 
     }
@@ -81,7 +87,7 @@ public class ActivityCategoryBooks extends AppCompatActivity {
 
                         vtDenGelenKitaplar.add(kitap);
                     }
-
+                    // adapter ve rv işlemleri.
                     adapter = new BooksAdapter(ActivityCategoryBooks.this,vtDenGelenKitaplar);
                     rvKategoriKitaplari.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
                     rvKategoriKitaplari.setAdapter(adapter);

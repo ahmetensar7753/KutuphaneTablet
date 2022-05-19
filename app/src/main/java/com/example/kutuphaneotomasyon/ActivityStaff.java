@@ -28,10 +28,11 @@ public class ActivityStaff extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().add(R.id.frameLayoutPersonelActivity,new FragmentUser()).commit();
 
+        // botNavigationView nesnesindeki item seçimleri burada dinleniyor.
         botNavViewPersonelActivity.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                // bottomNavigationView' içerisinde tıklanan item switch yapısı içerisinde alınıyor ve tıklanan iteme göre tempFragment'a ilgili fragment nesnesi atanıyor.
                 switch (item.getItemId()){
                     case R.id.action_kitap_islemleri:
                         tempFragment = new FragmentBook();
@@ -45,6 +46,7 @@ public class ActivityStaff extends AppCompatActivity {
                     default:
                         tempFragment = new FragmentUser();
                 }
+                // tempFragment bu şekilde dinamik oluyor ve fragmentlar arası geçiş işlemi burada başlatılıyor.
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutPersonelActivity,tempFragment).commit();
                 return true;
             }

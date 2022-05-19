@@ -1,3 +1,6 @@
+/* Bu activity ilgili personelinin bilgilerinin düzenlenebildiği activity'dir
+*  önceki activity'den gelen personel bilgileri burada onCreate metodu içerisinde alınıyor ve editTextlere yerleştiriliyor.
+*  güncelle butonuna tıklandığında editTextlerde bulunan güncel veriler perGuncelle fonksiyonuna yollanıyor.*/
 package com.example.kutuphaneotomasyon;
 
 import androidx.annotation.Nullable;
@@ -58,6 +61,7 @@ public class ActivityEditStaff extends AppCompatActivity {
         });
 
     }
+    // guncel veriler id'ye göre vt'ye post ediliyor ve guncelleniyor.
     public void perGuncelle(int id,String ad,String soyad,String tel,String gorev){
         String url = "https://kristalekmek.com/kutuphane/kullanicilar/update_personel.php";
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

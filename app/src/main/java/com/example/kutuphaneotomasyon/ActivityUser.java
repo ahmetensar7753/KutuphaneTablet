@@ -31,13 +31,14 @@ public class ActivityUser extends AppCompatActivity {
     private Button buttonAldigiKitaplariGoruntule;
 
     private Integer kullaniciID;
-    private Users personel;
+    private Users person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        // önceki activity'den gelen kullanıcıID değişkene alınıyor.
         kullaniciID = Integer.parseInt(getIntent().getStringExtra("kullanici_id"));
 
         textViewKullaniciId = findViewById(R.id.textViewKullaniciId);
@@ -49,9 +50,11 @@ public class ActivityUser extends AppCompatActivity {
         textViewKullaniciNot = findViewById(R.id.textViewKullaniciNot);
         buttonAldigiKitaplariGoruntule = findViewById(R.id.buttonAldigiKitaplariGoruntule);
 
+        // textView'a id'si yazdırılıyor ve kullanıcının kalan verileri id'ye göre kullaniciCek3 fonks. ile vt'den çekiliyor.
         textViewKullaniciId.setText(String.valueOf(kullaniciID));
         kullaniciCek3(kullaniciID);
 
+        // kullanıcı daha önce aldığı kitapları görebielceği bir activity'ye bu buton sayesinde geçebiliyor.
         buttonAldigiKitaplariGoruntule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +71,7 @@ public class ActivityUser extends AppCompatActivity {
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                personel = new Users();
+                person = new Users();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray liste = jsonObject.getJSONArray("kullanici_table");
@@ -83,22 +86,23 @@ public class ActivityUser extends AppCompatActivity {
                         String not = j.getString("kullanici_notu");
                         String bagisAdet = j.getString("bagislanan_kitap_say");
 
-                        personel.setKullanici_id(id);
-                        personel.setAd(ad);
-                        personel.setSoyad(soyad);
-                        personel.setTelefon(tel);
-                        personel.setKayit_tarih(kayit_tarih);
-                        personel.setOkudugu_kitap_say(Integer.parseInt(okuduguKitapSay));
-                        personel.setNotu(Double.parseDouble(not));
-                        personel.setBagis_kitap_say(Integer.parseInt(bagisAdet));
+                        // gelen veriler try bloğu üstünde oluşturulan person nesnesine alınıyor.
+                        person.setKullanici_id(id);
+                        person.setAd(ad);
+                        person.setSoyad(soyad);
+                        person.setTelefon(tel);
+                        person.setKayit_tarih(kayit_tarih);
+                        person.setOkudugu_kitap_say(Integer.parseInt(okuduguKitapSay));
+                        person.setNotu(Double.parseDouble(not));
+                        person.setBagis_kitap_say(Integer.parseInt(bagisAdet));
                     }
-
-                    textViewKullaniciAdSoyad.setText(personel.getAd()+" "+personel.getSoyad());
-                    textViewKullaniciTelNo.setText(personel.getTelefon());
-                    textViewKullaniciKayitTarih.setText(personel.getKayit_tarih());
-                    textViewKullaniciOkuduguKitapSay.setText(String.valueOf(personel.getOkudugu_kitap_say()));
-                    textViewKullaniciNot.setText(String.valueOf(personel.getNotu()));
-                    textViewKullaniciBagisKitapSay.setText(String.valueOf(personel.getBagis_kitap_say()));
+                    // kişinin bilgileri ilgili view'lara yazdırılıyor.
+                    textViewKullaniciAdSoyad.setText(person.getAd()+" "+ person.getSoyad());
+                    textViewKullaniciTelNo.setText(person.getTelefon());
+                    textViewKullaniciKayitTarih.setText(person.getKayit_tarih());
+                    textViewKullaniciOkuduguKitapSay.setText(String.valueOf(person.getOkudugu_kitap_say()));
+                    textViewKullaniciNot.setText(String.valueOf(person.getNotu()));
+                    textViewKullaniciBagisKitapSay.setText(String.valueOf(person.getBagis_kitap_say()));
 
 
                 } catch (JSONException e) {

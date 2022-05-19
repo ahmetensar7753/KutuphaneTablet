@@ -57,13 +57,15 @@ public class ActivityEditBook extends AppCompatActivity {
         buttonKitapRafDuzenleGuncelle = findViewById(R.id.buttonKitapRafDuzenleGuncelle);
         spinnerKitapDuzenleKategori = findViewById(R.id.spinnerKitapDuzenleKategori);
 
+        // Önceki activity'den gelen kitapID burada bir değişkene alınıyor ve ilgili textview'a set ediliyor.
         gelenKitapID = Integer.parseInt(getIntent().getStringExtra("kitapID"));
         textViewKitapDuzenleID.setText(String.valueOf(gelenKitapID));
 
+        // gelen kitapID'ye göre ilgili kitabın bilgileri bu fonksiyonla vt'den çekiliyor ve ilgili yerlere set ediliyor.
         kitapCek(gelenKitapID);
 
 
-
+        // düzenlen butonuyla düzenlenen kitap bilgileri burada alınıyor ve güncelleme fonskiyonuna gönderiliyor.
         buttonKitapRafDuzenleGuncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +76,7 @@ public class ActivityEditBook extends AppCompatActivity {
                 int kategori_id = vtDenCekilenKategoriler.get(spinnerKitapDuzenleKategori.getSelectedItemPosition()).getKategori_id();
                 String yazarAd = editTextKitapDuzenleYazarAd.getText().toString().trim();
 
+                // güncel bilgiler bu fonskyionla vt'de güncelleniyor. ID bilgisi verilerek istenen kayıt düzenleniyor.
                 kitapGuncelle(gelenKitapID,kitapAd,resimAd,bolge,raf,kategori_id,yazarAd);
 
             }
@@ -124,6 +127,8 @@ public class ActivityEditBook extends AppCompatActivity {
                     editTextKitapDuzenleKitapResimAd.setText(kitap.getResim_ad());
                     editTextKitapDuzenleBolum.setText(kitap.getBolge());
                     editTextKitapDuzenleRaf.setText(kitap.getRaf());
+                    // ilgili kitabın kategorisinin düzenlenebilmesi için bu fonskiyonda tüm kategoriler çekiliyor.
+                    // Kitabın mevcut kategorisi paremetre olarak verilmesinin sebebi spinner yapısında ilk sırada gözükmesi işlemi yapılıyor.
                     kategorilerCek(kitap.getKategori_ad());
 
 
@@ -155,6 +160,7 @@ public class ActivityEditBook extends AppCompatActivity {
         StringRequest istek = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                // Burada kitabın mevcut kategorisi ilk olarak spinnerda kullanılacak olan listeye atılıyor (ilk sırada gözükmesi için).
                 vtDenCekilenKategoriler = new ArrayList<>();
                 kategoriAdListesi = new ArrayList<>();
                 Categorys kitabınKategorisi = new Categorys();
@@ -170,6 +176,7 @@ public class ActivityEditBook extends AppCompatActivity {
                         Integer kategoriID = j.getInt("kategori_id");
                         String kategoriAD = j.getString("kategori_ad");
 
+                        // Burada ise mevcut kategori liste içinde tekrar etmemesi için if kontrolü ile eşdeğer kayıt yakalanıyor.
                         if (!kategoriAD.equals(kitapKategori)){
                             Categorys k = new Categorys(kategoriID,kategoriAD);
 
@@ -180,6 +187,7 @@ public class ActivityEditBook extends AppCompatActivity {
                             vtDenCekilenKategoriler.get(0).setAd(kitapKategori);
                         }
                     }
+                    // tamamlanan liste adapter'a yollanıyor ve spinner'a set ediliyor.
                     veriAdapter = new ArrayAdapter<String>(ActivityEditBook.this, android.R.layout.simple_list_item_1,android.R.id.text1,kategoriAdListesi);
                     spinnerKitapDuzenleKategori.setAdapter(veriAdapter);
 

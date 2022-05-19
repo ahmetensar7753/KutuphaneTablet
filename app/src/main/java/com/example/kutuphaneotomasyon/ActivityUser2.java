@@ -36,6 +36,7 @@ public class ActivityUser2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user2);
 
+        // önceki activity'den gelen kullanıcı'id si alınıyor ve kitapGecmisiCek fonksiyonuna gönderiliyor.
         kullaniciID = Integer.parseInt(getIntent().getStringExtra("kullanici_id"));
         rvKullaniciKitapGecmisi = findViewById(R.id.rvKullaniciKitapGecmisi);
 
@@ -43,6 +44,7 @@ public class ActivityUser2 extends AppCompatActivity {
 
     }
 
+    // bu fonksiyonda gelen kullanıcıID'ye göre çekilen veriler arrayList'e atılıyor ve ardından adapter-rv işlemleriyle gösteriliyor.
     public void kitapGecmisCek(int id){
         String url = "https://kristalekmek.com/kutuphane/kitaplar/alinan_kitaplar_cek.php";
         StringRequest istek = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -68,7 +70,7 @@ public class ActivityUser2 extends AppCompatActivity {
 
                         vtDenCekilenAlinanlar.add(alinanKitap);
                     }
-
+                    // gelen verilerle adapter kaldırılıyor ve recyclerView'a set ediliyor.
                     adapter = new UserBookHistoryAdapter(ActivityUser2.this,vtDenCekilenAlinanlar);
                     rvKullaniciKitapGecmisi.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
                     rvKullaniciKitapGecmisi.setAdapter(adapter);

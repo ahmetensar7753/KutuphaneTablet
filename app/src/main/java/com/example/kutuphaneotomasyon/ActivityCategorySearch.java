@@ -1,3 +1,5 @@
+/*Bu activity'de kategoriler recycler view içerisinde cardview'larla listeleniyor.
+* kategorilerCek fonksiyonuyla vt'den tüm kategoriler çekiliyor ve bu fonksiyon içerisinde adapter'a yollanıyor.*/
 package com.example.kutuphaneotomasyon;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +59,7 @@ public class ActivityCategorySearch extends AppCompatActivity {
 
                         vtDenCekilenKategoriler.add(k);
                     }
-
+                    // adapter ve recycler view işlemleri.
                     adapter = new CategoryAdapter(ActivityCategorySearch.this,vtDenCekilenKategoriler);
                     rvKategoriAra.setLayoutManager(new StaggeredGridLayoutManager(5,StaggeredGridLayoutManager.VERTICAL));
                     rvKategoriAra.setAdapter(adapter);
